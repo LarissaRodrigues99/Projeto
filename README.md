@@ -1,2 +1,0 @@
-# Projeto
-Projeto blog pessoal
