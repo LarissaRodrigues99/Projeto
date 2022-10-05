@@ -6,6 +6,9 @@ import "./App.css";
 import Login from "./paginas/login/Login";
 import Home from './paginas/home/Home';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import ListaTema from './components/temas/listatemas/ListaTema';
+import ListaPostagem from "./components/temas/postagens/listapostagem/ListaPostagem"
+import TabPostagem from './components/temas/postagens/tabpostagem/TabPostagem';
 
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+            <Route path="/temas" element={<ListaTema />} />
+            <Route path="/listapostagem" element={<ListaPostagem />} />
+            <Route path="/tabpostagem" element={<TabPostagem />} />
             
         </Routes>
             </div>
