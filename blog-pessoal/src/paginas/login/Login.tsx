@@ -9,13 +9,13 @@ import UserLogin from "../../models/UserLogin";
 
 function Login(){
 
-        let history = useNavigate();
+        let navigate = useNavigate();
     const [token, setToken] = useLocalStorage("token");
     const [userLogin, setUserLogin]= useState<UserLogin>(
         {
             id: 0,
-            usuario: " ",
-            senha: " ",
+            usuario: "",
+            senha: "",
             token: ""
         }
     )
@@ -25,11 +25,12 @@ function Login(){
             ...userLogin,
             [e.target.name]: e.target.value
         })
+        console.log(userLogin)
     }
 
         useEffect(()=>{
-            if(token!=""){
-              //  history.push("/home")
+            if(token!==""){
+            navigate("/home")
             }
         }, [token])
         
@@ -37,7 +38,7 @@ function Login(){
         async function onSubmit(e: ChangeEvent<HTMLFormElement>){
                 e.preventDefault();
                 try{
-                        await login(`/usuarios/logar`, userLogin, setToken)
+                        await login(`usuarios/logar`, userLogin, setToken)
                         alert("Usuário logado com sucesso!");
                 }
                 catch(erro){
@@ -52,7 +53,7 @@ function Login(){
                         <Box paddingX={20}>
                             <form onSubmit={onSubmit}>
                                 <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="textos"> Entrar </Typography>
-                                <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}  id="usuário" label="usuário" variant="outlined" name="usuário" margin="normal" fullWidth />
+                                <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}  id="usuário" label="usuário" variant="outlined" name="usuario" margin="normal" fullWidth />
                                 <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth />
                                 <Box marginTop={2} textAlign="center">
                                         <Button type="submit" variant="contained" color="primary">
