@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const api = axios.create ({
 
-    baseURL:"https://blogpessoalbackendgen.herokuapp.com/swagger-ui/index.html"
+    baseURL:"https://blogdothiagofaccipieri.onrender.com/"
     
 })
 
