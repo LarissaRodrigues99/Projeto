@@ -46,7 +46,7 @@ function Navbar () {
                         <Typography variant="h6" color="inherit"> Tela Inicial </Typography>
                     </Box>
                 </Link>
-                <Link to="/postagem" className="text-decorator-none">
+                <Link to="/listapostagem" className="text-decorator-none">
                     <Box mx={1} className="cursor">
                         <Typography variant="h6" color="inherit"> Postagens </Typography>
                     </Box>
@@ -56,7 +56,7 @@ function Navbar () {
                         <Typography variant="h6" color="inherit"> Temas </Typography>
                     </Box>
                 </Link>
-                <Link to="/fotmularioTema" className="text-decorator-none">
+                <Link to="/formularioTema" className="text-decorator-none">
                 <Box mx={1} className="cursor">
                     <Typography variant="h6" color="inherit"> Cadastrar Tema </Typography>
                 </Box>

@@ -20,7 +20,7 @@ function CadastroPost() {
     );
 
     useEffect(() => {
-        if (token == "") {
+        if (token === "") {
             toast.error("Você precisa estar logado!", {
                 position: "top-right",
                 autoClose: 2000,
@@ -63,7 +63,7 @@ function CadastroPost() {
     }, [id])
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -129,7 +129,7 @@ function CadastroPost() {
     }
 
     function back() {
-        navigate('/posts')
+        navigate('/listapostagem')
     }
 
     return (
@@ -144,7 +144,7 @@ function CadastroPost() {
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
                             headers: {
                                 'Authorization': token
                             }
