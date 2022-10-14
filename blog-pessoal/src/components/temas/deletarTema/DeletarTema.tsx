@@ -44,7 +44,7 @@ import { toast } from 'react-toastify';
         }, [id])
 
             async function findById(id: string) {
-                buscaId(`/tema/${id}`, setTema, {
+                buscaId(`/temas/${id}`, setTema, {
                     headers: {
                     'Authorization': token
                     }
@@ -53,7 +53,7 @@ import { toast } from 'react-toastify';
 
             function sim() {
                 navigate('/temas')
-                deleteId(`/tema/${id}`, {
+                deleteId(`/temas/${id}`, {
                 headers: {
                 'Authorization': token
                 }

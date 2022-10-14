@@ -17,7 +17,7 @@ export const api = axios.create ({
     }
 
     export const busca = async (url: any, setDados: any, header: any) => {
-        const resposta = await api.post(url, header)
+        const resposta = await api.get(url, header)
         setDados(resposta.data)
     }
 
